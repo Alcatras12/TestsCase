@@ -1,0 +1,10 @@
+{
+  "AlertText": "You clicked a button",
+  "ConfirmAlertText": "Do you confirm action?",
+  "AppearedText": "You selected Ok",
+  "PromptAlertText": "Please enter your name",
+  "ParentFrameText": "Parent frame",
+  "ChildFrameText": "Child Iframe",
+  "Age": "10",
+  "Date": "29/02/2024"
+}
