@@ -4,3 +4,4 @@ obj/
 logs/
 logfile/
 .env/
+.env
