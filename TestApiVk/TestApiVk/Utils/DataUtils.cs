@@ -12,7 +12,7 @@ namespace TestApiVk.Utils
 
         static DataUtils()
         {
-            Env.Load("C:\\Users\\ryzen\\Desktop\\TestApiVk\\TestApiVk\\.env");
+            Env.Load();
             apiKey = Environment.GetEnvironmentVariable("API_KEY");
             username = Environment.GetEnvironmentVariable("USERNAME");
             password = Environment.GetEnvironmentVariable("PASSWORD");
