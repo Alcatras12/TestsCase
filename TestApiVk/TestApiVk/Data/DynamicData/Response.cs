@@ -5,17 +5,16 @@ namespace TestApiVk.Data.DynamicData
 {
     public class Response
     {
-        public int post_id { get; set; }
-        public string upload_url { get; set; }
-        public int id { get; set; }
-        public int owner_id { get; set; }
-        public int[] items { get; set; }
-
+        public int Post_id { get; set; }
+        public string Upload_url { get; set; }
+        public int Id { get; set; }
+        public int Owner_id { get; set; }
+        public int[] Items { get; set; }
 
         public Response()
         {
             Dictionary<string, string> testData = ConfigUtils.GetUserData();
-            owner_id = int.Parse(testData["owner_id"]);
+            Owner_id = int.Parse(testData["owner_id"]);
         }
     }
 }

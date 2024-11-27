@@ -10,7 +10,6 @@ namespace TestApiVk.Test
         protected Dictionary<string, string> configApi = ConfigUtils.GetConfigData();
         protected MainPageForm mainPageForm = new MainPageForm();
 
-
         [SetUp]
         public void SetUp()
         {

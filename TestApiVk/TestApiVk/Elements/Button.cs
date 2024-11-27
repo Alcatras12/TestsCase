@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
 
 
-namespace TestApiVk.BaseElement
+namespace TestApiVk.Elements
 {
-    public class Button : BaseElements
+    public class Button : BaseElement
     {
         public Button(By locator, string name) : base(locator, name) { }
     }

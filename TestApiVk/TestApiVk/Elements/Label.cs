@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
 
 
-namespace TestApiVk.BaseElement
+namespace TestApiVk.Elements
 {
-    public class Label : BaseElements
+    public class Label : BaseElement
     {
         public Label(By locator, string name) : base(locator, name) { }
     }

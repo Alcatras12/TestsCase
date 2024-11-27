@@ -1,4 +1,4 @@
-﻿using TestApiVk.BaseElement;
+﻿using TestApiVk.Elements;
 
 
 namespace TestApiVk
@@ -7,7 +7,6 @@ namespace TestApiVk
     {
         protected Label elements;
         protected string? name;
-
 
         public bool IsPageOpened() => elements.IsVisible();
     }

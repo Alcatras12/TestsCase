@@ -6,7 +6,6 @@ namespace TestApiVk.Utils
     public static class ApiUtils
     {
         private static Dictionary<string, string> configApi = ConfigUtils.GetConfigData();
-
       
         public static RestResponse GetRequest(string url, Dictionary<string ,string> paramentrs)
         {
@@ -18,7 +17,6 @@ namespace TestApiVk.Utils
             }
             var client = new RestClient($"{configApi["clientApi"]}");
             return client.Execute(request);
-           
         }
     }
 }

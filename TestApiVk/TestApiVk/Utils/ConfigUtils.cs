@@ -5,8 +5,8 @@ namespace TestApiVk.Utils
 {
     public static class ConfigUtils
     {
-      private const string USER_DATA_PATH = @"C:\Users\ryzen\Desktop\TestApiVk\TestApiVk\Data\UserData.json";
-        private const string CONFIG_DATA = @"C:\Users\ryzen\Desktop\TestApiVk\TestApiVk\Data\ConfigApi.json";
+        private const string USER_DATA_PATH = "../../../Data/UserData.json";
+        private const string CONFIG_DATA = "../../../Data/ConfigApi.json";
 
         public static Dictionary<string, string> GetUserData()
         {

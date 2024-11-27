@@ -2,6 +2,6 @@
 {
     public class VkResponseList
     {
-        public List<Response> response { get; set; }
+        public List<Response> Response { get; set; }
     }
 }

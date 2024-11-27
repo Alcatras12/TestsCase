@@ -1,4 +1,4 @@
-﻿using TestApiVk.BaseElement;
+﻿using TestApiVk.Elements;
 using OpenQA.Selenium;
 
 
@@ -9,7 +9,6 @@ namespace TestApiVk.PageObject
         private Label vkAutorizationLabel = new Label(By.XPath("//div[@class='vkc__StepInfo__avatar vkc__StepInfo__hideAvatarMedia']"), "vkAutorization label");
         private Input passwordInput = new Input(By.XPath("//input[@name='password']"), "Password input");
         private Button signInButton = new Button(By.XPath("//span[@class='vkuiButton__in']"), "Sign in button");
-
 
         public AutorizationPageForm()
         {

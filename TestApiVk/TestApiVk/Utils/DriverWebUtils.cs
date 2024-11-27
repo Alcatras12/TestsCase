@@ -43,18 +43,5 @@ namespace TestApiVk
         }
 
         public static void CloseWindow() => driver.Close();
-
-        public static void ScrollWindowDown()
-        {
-            IJavaScriptExecutor js = (IJavaScriptExecutor)GetWebDriver();
-            js.ExecuteScript("window.scrollBy(0,1000)");
-        }
-
-        public static void ScrollToElement(IWebElement element)
-        {
-            LogUtils.log.Info($"Scroll window to {element}");
-            IJavaScriptExecutor js = (IJavaScriptExecutor)GetWebDriver();
-            js.ExecuteScript("arguments[0].scrollIntoView(true);", element);
-        }
     }
 }

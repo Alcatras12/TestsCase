@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
 
 
-namespace TestApiVk.BaseElement
+namespace TestApiVk.Elements
 {
-    public class TextField:BaseElements
+    public class TextField : BaseElement
     {
         public TextField(By locator, string name) : base(locator, name) { }
     }

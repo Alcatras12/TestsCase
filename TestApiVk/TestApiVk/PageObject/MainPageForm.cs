@@ -1,4 +1,4 @@
-﻿using TestApiVk.BaseElement;
+﻿using TestApiVk.Elements;
 using OpenQA.Selenium;
 
 
@@ -10,7 +10,6 @@ namespace TestApiVk.PageObject
         private Input loginInput = new Input(By.XPath("//input[@class='VkIdForm__input']"), "Login input");
         private CheckBox saveLoginCheckBox = new CheckBox(By.XPath("//span[@class='VkIdCheckbox__name']"), "Save login check box");
         private Button signInButton = new Button(By.XPath("//div[@id='index_login']/descendant::span[@class='FlatButton__in']"), "Sign in button");
-
 
         public MainPageForm()
         {

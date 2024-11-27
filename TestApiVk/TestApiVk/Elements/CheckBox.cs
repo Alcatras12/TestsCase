@@ -1,9 +1,9 @@
 ﻿using OpenQA.Selenium;
 
 
-namespace TestApiVk.BaseElement
+namespace TestApiVk.Elements
 {
-    public class CheckBox: BaseElements
+    public class CheckBox: BaseElement
     {
         public CheckBox(By locator, string name) : base(locator, name) { }
     }

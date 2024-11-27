@@ -3,8 +3,8 @@
     public class VkResponse
     {
         public Response Response { get; set; }
-        public string server { get; set; }
-        public string photo { get; set; }
-        public string hash { get; set; }
+        public string Server { get; set; }
+        public string Photo { get; set; }
+        public string Hash { get; set; }
     }
 }
