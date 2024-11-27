@@ -9,7 +9,7 @@ namespace TestApiVk.PageObject
     public class MyPageForm : BaseForm
     {
         private Label myPageLabel = new Label(By.XPath("//div[@class='ProfileInfo']"), "My page label");
-        private Button showcommentButton = new Button(By.XPath("//span[@class='js-replies_next_label replies_next_label']"), 
+        private Button showСommentButton = new Button(By.XPath("//span[@class='js-replies_next_label replies_next_label']"), 
             "Show comment button");
 
         public MyPageForm()
@@ -26,11 +26,12 @@ namespace TestApiVk.PageObject
 
             likePostButton.Click();
         }
+
         public void ClickShowComment()
         {
-            if (showcommentButton.IsVisible())
+            if (showСommentButton.IsVisible())
             {
-                showcommentButton.Click();
+                showСommentButton.Click();
             }
         }
 

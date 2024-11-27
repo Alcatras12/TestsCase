@@ -40,23 +40,23 @@ namespace TestApiVk.Utils
                 {"access_token", Credentials.apiKey },
                 {"v", $"{configApi["v"]}" }
             };
-            var postimage = ApiUtils.GetRequest("/method/wall.edit", parameters);
+            var postImageResponse = ApiUtils.GetRequest("/method/wall.edit", parameters);
 
-            Assert.That((int)postimage.StatusCode, Is.EqualTo((int)HttpStatusCode.OK), 
-                $"Status code response {(int)postimage.StatusCode}");
+            Assert.That((int)postImageResponse.StatusCode, Is.EqualTo((int)HttpStatusCode.OK), 
+                $"Status code response {(int)postImageResponse.StatusCode}");
 
-            Assert.IsNotNull(postimage.Content, "Response of request is empty");
+            Assert.IsNotNull(postImageResponse.Content, "Response of request is empty");
         }
 
         public static string UploadImageToServer(string pathFile)
         {
             LogUtils.log.Info($"Loading a file from '{pathFile}'");
-            var geturl = GetPhotoUploadUrl();
-            var uploudimage = UploadImageInServer(geturl, pathFile);
-            return SaveImageInServer(uploudimage);
+            var serverUploadResponse = GetPhotoUploadUrlResponse();
+            var uploadImageResponse = UploadImageInServer(serverUploadResponse, pathFile);
+            return SaveImageInServer(uploadImageResponse);
         }
 
-        private static VkResponse GetPhotoUploadUrl()
+        private static VkResponse GetPhotoUploadUrlResponse()
         {
             var parameters = new Dictionary<string, string>
             {
@@ -98,14 +98,14 @@ namespace TestApiVk.Utils
                 {"access_token", Credentials.apiKey },
                 {"v", $"{configApi["v"]}" }
             };
-            var saveimage = ApiUtils.GetRequest("/method/photos.saveWallPhoto", parameters);
+            var saveImageResponse = ApiUtils.GetRequest("/method/photos.saveWallPhoto", parameters);
 
-            Assert.That((int)saveimage.StatusCode, Is.EqualTo((int)HttpStatusCode.OK),
-                $"Status code response {(int)saveimage.StatusCode}");
+            Assert.That((int)saveImageResponse.StatusCode, Is.EqualTo((int)HttpStatusCode.OK),
+                $"Status code response {(int)saveImageResponse.StatusCode}");
 
-            Assert.IsNotNull(saveimage.Content, "Response of request is empty");
+            Assert.IsNotNull(saveImageResponse.Content, "Response of request is empty");
 
-            var responseList = JsonConvert.DeserializeObject<VkResponseList>(saveimage.Content);
+            var responseList = JsonConvert.DeserializeObject<VkResponseList>(saveImageResponse.Content);
             var itemResponse = responseList.Response[0];
             string attachments = $"photo{itemResponse.Owner_id}_{itemResponse.Id}";
             return attachments;
@@ -122,12 +122,12 @@ namespace TestApiVk.Utils
                 {"access_token", Credentials.apiKey},
                 {"v", $"{configApi["v"]}"}
             };
-            var createcommentrequest = ApiUtils.GetRequest("/method/wall.createComment", parameters);
+            var createCommentResponse = ApiUtils.GetRequest("/method/wall.createComment", parameters);
 
-            Assert.That((int)createcommentrequest.StatusCode, Is.EqualTo((int)HttpStatusCode.OK),
-                $"Status code response {(int)createcommentrequest.StatusCode}");
+            Assert.That((int)createCommentResponse.StatusCode, Is.EqualTo((int)HttpStatusCode.OK),
+                $"Status code response {(int)createCommentResponse.StatusCode}");
 
-            Assert.IsNotNull(createcommentrequest.Content, "Response of request is empty");
+            Assert.IsNotNull(createCommentResponse.Content, "Response of request is empty");
         }
 
         public static bool IsLikeUser(VkResponse responce)
@@ -141,14 +141,14 @@ namespace TestApiVk.Utils
                 {"access_token", Credentials.apiKey },
                 {"v", $"{configApi["v"]}" }
             };
-            var getlist = ApiUtils.GetRequest("/method/likes.getList", parameters);
+            var likesListResponse = ApiUtils.GetRequest("/method/likes.getList", parameters);
 
-            Assert.That((int)getlist.StatusCode, Is.EqualTo((int)HttpStatusCode.OK),
-                $"Status code response {(int)getlist.StatusCode}");
+            Assert.That((int)likesListResponse.StatusCode, Is.EqualTo((int)HttpStatusCode.OK),
+                $"Status code response {(int)likesListResponse.StatusCode}");
 
-            Assert.IsNotNull(getlist.Content, "Response of request is empty");
+            Assert.IsNotNull(likesListResponse.Content, "Response of request is empty");
 
-            var itemResponse = JsonConvert.DeserializeObject<VkResponse>(getlist.Content);
+            var itemResponse = JsonConvert.DeserializeObject<VkResponse>(likesListResponse.Content);
             var items = itemResponse.Response.Items;
             foreach (var item in items)
             {
@@ -170,12 +170,12 @@ namespace TestApiVk.Utils
                   { "access_token", Credentials.apiKey},
                   { "v", configApi["v"]}
             };
-            var deletePost = ApiUtils.GetRequest("/method/wall.delete", parameters);
+            var deletePostResponse = ApiUtils.GetRequest("/method/wall.delete", parameters);
 
-            Assert.That((int)deletePost.StatusCode, Is.EqualTo((int)HttpStatusCode.OK), 
-                $"Status code response {(int)deletePost.StatusCode}");
+            Assert.That((int)deletePostResponse.StatusCode, Is.EqualTo((int)HttpStatusCode.OK), 
+                $"Status code response {(int)deletePostResponse.StatusCode}");
 
-            Assert.IsNotNull(deletePost.Content, "Response of request is empty");
+            Assert.IsNotNull(deletePostResponse.Content, "Response of request is empty");
         }
     }
 }

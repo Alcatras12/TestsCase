@@ -26,15 +26,15 @@ namespace TestApiVk.Test
 
             Assert.IsTrue(myPageForm.IsPageOpened(), "My page is not opened");
 
-            string newmessage = StringUtils.GenerateRandomString();
-            var newPost = VkApiUtils.CreatePostWall(newmessage);
+            string postDescription = StringUtils.GenerateRandomString();
+            var newPost = VkApiUtils.CreatePostWall(postDescription);
             Assert.IsTrue(myPageForm.IsDisplayedPost(newPost), "Wall post is not displayed");
-            Assert.That(myPageForm.GetTextPost(newPost), Is.EqualTo(newmessage), "The displayed message and the sent message do not match");
+            Assert.That(myPageForm.GetTextPost(newPost), Is.EqualTo(postDescription), "The displayed message and the sent message do not match");
 
-            string editmessage = StringUtils.GenerateRandomString();
-            VkApiUtils.EditPostWall(newPost, editmessage, VkApiUtils.UploadImageToServer(testData["photo"]));
+            string editPostTitle = StringUtils.GenerateRandomString();
+            VkApiUtils.EditPostWall(newPost, editPostTitle, VkApiUtils.UploadImageToServer(testData["photo"]));
             Assert.IsTrue(myPageForm.IsVisibleImage(newPost), "The image didn't load");
-            Assert.That(myPageForm.GetTextPost(newPost), Is.EqualTo(editmessage), "The displayed message and the sent message do not match");
+            Assert.That(myPageForm.GetTextPost(newPost), Is.EqualTo(editPostTitle), "The displayed message and the sent message do not match");
 
             string comment = StringUtils.GenerateRandomString();
             VkApiUtils.CreatCommentWall(newPost, comment);
